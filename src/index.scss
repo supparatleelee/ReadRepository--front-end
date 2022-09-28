@@ -18,11 +18,35 @@ code {
 // include all of bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+.marginx-7 {
+  margin-left: 7vw;
+  margin-right: 7vw;
+}
 /* Header Component */
-.min-vh-10 {
-  min-height: 10vh;
+.min-vh-15 {
+  min-height: 15vh;
 }
 
-.min-vh-90 {
-  min-height: 90vh;
+.min-vh-85 {
+  min-height: 85vh;
+}
+
+.create-account-btn {
+  background-color: #a8a278;
+  border-radius: 10px;
+}
+
+.search-icon {
+  background-image: url(./assets/icons/search.svg);
+  background-repeat: no-repeat;
+  background-position: 10px 6px;
+  text-indent: 35px;
+}
+
+.min-w-50vh {
+  min-width: 50vh;
+}
+
+.p-10px {
+  padding: 0 10px 0 10px;
 }
