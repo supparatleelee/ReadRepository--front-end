@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+// SCSS
+// to edit bootstrap built-in className in this config.scss
+@import './scss/config';
+// include all of bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+/* Header Component */
+.min-vh-10 {
+  min-height: 10vh;
+}
+
+.min-vh-90 {
+  min-height: 90vh;
+}
