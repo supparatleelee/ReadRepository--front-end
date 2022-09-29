@@ -1,18 +1,33 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import LoginModal from '../../features/LoginRegister/LoginModal';
+import RegisterModal from '../../features/LoginRegister/RegisterModal';
 
 function VisitorUserMenu() {
+  const [isOpenModal1, setIsOpenModal1] = useState(false);
+  const [isOpenModal2, setIsOpenModal2] = useState(false);
+
   return (
     <div>
       {/* Change to to the real path once when doing authFeature */}
-      <Link className="text-decoration-none px-5 text-dark" to="/">
+      <button
+        className="text-decoration-none px-5 text-dark"
+        onClick={() => setIsOpenModal1(true)}
+        style={{ border: 'none', backgroundColor: '#fff' }}
+      >
         Login
-      </Link>
-      <Link
-        className="text-decoration-none px-5 py-3 text-dark create-account-btn"
-        to="/"
+      </button>
+      <button
+        type="button"
+        className="btn btn-secondary btn-sm text-decoration-none px-5 py-3 text-dark border-radius-10px"
+        onClick={() => setIsOpenModal2(true)}
       >
         Create Account
-      </Link>
+      </button>
+      <LoginModal open={isOpenModal1} onClose={() => setIsOpenModal1(false)} />
+      <RegisterModal
+        open={isOpenModal2}
+        onClose={() => setIsOpenModal2(false)}
+      />
     </div>
   );
 }
