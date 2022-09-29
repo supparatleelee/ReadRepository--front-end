@@ -1,5 +1,7 @@
 function UserCollectionPage() {
-  return <div>UserCollectionPage</div>;
+  return (
+    <div className="margin-left-8vw w-100 bg-info">UserCollectionPage</div>
+  );
 }
 
 export default UserCollectionPage;

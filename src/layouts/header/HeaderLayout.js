@@ -3,7 +3,7 @@ import Header from './Header';
 import Container from '../container/Container';
 import bg from '../../assets/images/bg.png';
 
-function VisitorLayout() {
+function HeaderLayout() {
   return (
     <div style={{ backgroundImage: `url(${bg})` }}>
       <Header />
@@ -14,4 +14,4 @@ function VisitorLayout() {
   );
 }
 
-export default VisitorLayout;
+export default HeaderLayout;

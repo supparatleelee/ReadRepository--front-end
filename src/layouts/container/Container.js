@@ -1,12 +1,5 @@
 function Container({ children }) {
-  return (
-    <div
-      className="min-vh-85 marginx-7"
-      // style={{ backgroundColor: 'blue' }}
-    >
-      {children}
-    </div>
-  );
+  return <div className="min-vh-85 w-77">{children}</div>;
 }
 
 export default Container;

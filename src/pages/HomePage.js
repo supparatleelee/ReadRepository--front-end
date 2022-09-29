@@ -1,5 +1,5 @@
 function HomePage() {
-  return <div>HomePage</div>;
+  return <div className="margin-left-8vw w-100 bg-info">HomePage</div>;
 }
 
 export default HomePage;

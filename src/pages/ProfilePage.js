@@ -1,5 +1,5 @@
 function ProfilePage() {
-  return <div>ProfilePage</div>;
+  return <div className="margin-left-8vw w-100 bg-info">ProfilePage</div>;
 }
 
 export default ProfilePage;
