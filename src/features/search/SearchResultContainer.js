@@ -2,7 +2,7 @@ import SearchResultItem from './SearchResultItem';
 
 function SearchResultContainer() {
   return (
-    <div className="h-80 mt-3 border-radius-10px">
+    <div className="h-80 mt-2 border-radius-10px">
       {/* .map here */}
       {/* {bookList.map((item) => (
         <SearchResultItem />
@@ -13,7 +13,7 @@ function SearchResultContainer() {
         <SearchResultItem />
         <SearchResultItem />
       </div>
-      <div className="d-flex justify-content-center mt-1">
+      <div className="d-flex justify-content-center mt-4">
         <SearchResultItem />
         <SearchResultItem />
         <SearchResultItem />
