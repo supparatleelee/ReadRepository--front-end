@@ -1,6 +1,6 @@
 import ProfileHeader from '../features/profile/ProfileHeader';
 import ProfileInfoContainer from '../features/profile/ProfileInfoContainer';
-import UserCollectionContainer from '../features/profile/UserCollectionContainer';
+import UserCollectionDisplayContainer from '../features/profile/UserCollectionDisplayContainer';
 
 function ProfilePage() {
   return (
@@ -9,7 +9,7 @@ function ProfilePage() {
 
       <ProfileInfoContainer />
 
-      <UserCollectionContainer />
+      <UserCollectionDisplayContainer />
     </div>
   );
 }

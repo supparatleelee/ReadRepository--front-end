@@ -1,4 +1,4 @@
-function UserCollectionContainer() {
+function UserCollectionDisplayContainer() {
   return (
     <div className="mt-5 d-flex">
       <div className="want-to-read">
@@ -28,4 +28,4 @@ function UserCollectionContainer() {
   );
 }
 
-export default UserCollectionContainer;
+export default UserCollectionDisplayContainer;

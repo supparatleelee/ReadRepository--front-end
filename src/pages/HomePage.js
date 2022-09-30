@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ArrowRightSecondaey } from '../assets/icons';
 
 function HomePage() {
@@ -14,15 +15,25 @@ function HomePage() {
             >
               Get Started
             </h1>
-            <button style={{ border: 'none', backgroundColor: '#fff' }}>
+            <Link
+              to="/profile/1"
+              style={{
+                border: 'none',
+                backgroundColor: '#fff',
+                textDecoration: 'none',
+              }}
+            >
               <span
                 className="text-secondary"
-                style={{ marginRight: '5px', fontSize: '14px' }}
+                style={{
+                  marginRight: '5px',
+                  fontSize: '14px',
+                }}
               >
                 Go to your profile
               </span>
               <ArrowRightSecondaey />
-            </button>
+            </Link>
           </div>
 
           <div

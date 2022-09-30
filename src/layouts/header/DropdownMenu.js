@@ -12,7 +12,7 @@ function DropdownMenu({ open, onClose }) {
       <li>
         <Link
           // Change to /profile/${id} later
-          to="/profile"
+          to="/profile/1"
           className="dropdown-item p-2 d-flex align-items-center gap-3 hover-bg-neutral-100 hover-rounded-lg"
           onClick={onClose}
         >

@@ -24,6 +24,10 @@ function Router() {
             {/* <Route path="/friend" element={<FriendPage />} /> */}
             <Route path="/book/info/:bookId" element={<BookInfoPage />} />
             <Route
+              path="/profile/:id/collection/:collection-status"
+              element={<UserCollectionPage />}
+            />
+            <Route
               path="/profile/:id/collection/:id"
               element={<UserCollectionPage />}
             />
