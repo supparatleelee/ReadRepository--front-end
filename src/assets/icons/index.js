@@ -16,6 +16,25 @@ export function ArrowDown() {
   );
 }
 
+export function ArrowRightSecondaey() {
+  return (
+    <svg
+      width="12"
+      height="19"
+      viewBox="0 0 12 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.5 1L10 9.5L1.5 18"
+        stroke="#A8A278"
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+}
+
 export function ArrowRight() {
   return (
     <svg
