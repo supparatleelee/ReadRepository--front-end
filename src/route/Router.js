@@ -11,7 +11,7 @@ import LandingPage from '../pages/LandingPage';
 import SideNavLayout from '../layouts/sidenav/SideNavLayout';
 
 function Router() {
-  let user = 0;
+  let user = 1;
   return (
     <Routes>
       {user ? (

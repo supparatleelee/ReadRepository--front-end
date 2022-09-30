@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import LoginModal from '../../features/LoginRegister/LoginModal';
-import RegisterModal from '../../features/LoginRegister/RegisterModal';
+import LoginModal from '../../features/loginRegister/LoginModal';
+import RegisterModal from '../../features/loginRegister/RegisterModal';
 
 function VisitorUserMenu() {
   const [isOpenModal1, setIsOpenModal1] = useState(false);

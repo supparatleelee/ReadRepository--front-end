@@ -1,5 +1,5 @@
 import landingPageImg from '../assets/images/landing-page-img.png';
-import RegisterModal from '../features/LoginRegister/RegisterModal';
+import RegisterModal from '../features/loginRegister/RegisterModal';
 import { useState } from 'react';
 
 function LandingPage() {

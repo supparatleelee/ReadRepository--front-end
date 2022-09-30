@@ -4,7 +4,7 @@ import VisitorUserMenu from './VisitorUserMenu';
 import AuthUserMenu from './AuthUserMenu';
 
 function Header() {
-  let user = 0;
+  let user = 1;
   return (
     <nav class="navbar navbar-expand-lg min-vh-15">
       <div class="container-fluid marginx-7">

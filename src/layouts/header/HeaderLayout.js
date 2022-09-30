@@ -5,7 +5,13 @@ import bg from '../../assets/images/bg.png';
 
 function HeaderLayout() {
   return (
-    <div style={{ backgroundImage: `url(${bg})` }}>
+    <div
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <Header />
       <Container>
         <Outlet />

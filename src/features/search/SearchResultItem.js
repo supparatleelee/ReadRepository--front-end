@@ -11,7 +11,10 @@ function SearchResultItem() {
         width="80px"
         height="122px"
         alt="Book Result Item"
-        style={{ margin: '0 0 7px 59px' }}
+        style={{
+          margin: '0 0 7px 59px',
+          boxShadow: '5px 6px 10px rgba(0, 0, 0, 0.20)',
+        }}
       />
       <h1
         className="text-primary text-center"
@@ -44,7 +47,10 @@ function SearchResultItem() {
         <button
           type="button"
           className="btn btn-primary btn-sm"
-          style={{ borderRadius: '0 10px 10px 0' }}
+          style={{
+            borderRadius: '0 10px 10px 0',
+            borderLeft: '1px solid #A8A278',
+          }}
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <ArrowDown />
