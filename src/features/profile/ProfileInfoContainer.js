@@ -1,5 +1,4 @@
 import { SettingSecondaryColor } from '../../assets/icons';
-import Avatar from '../../components/ui/Avatar';
 
 function ProfileInfoContainer() {
   return (

@@ -4,7 +4,7 @@ function SearchBar() {
   const { setSearchInput } = useSearchContext();
 
   return (
-    <form class="d-flex" role="search">
+    <form className="d-flex" role="search">
       <input
         className="form-control me-2 search-icon min-w-50vh"
         type="search"
