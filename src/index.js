@@ -7,12 +7,15 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import SearchContextProvider from './contexts/SearchContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <SearchContextProvider>
+        <App />
+      </SearchContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

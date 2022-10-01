@@ -1,4 +1,8 @@
+import { useSearchContext } from '../../contexts/SearchContext';
+
 function SearchBar() {
+  const { setSearchInput } = useSearchContext();
+
   return (
     <form class="d-flex" role="search">
       <input
@@ -6,6 +10,7 @@ function SearchBar() {
         type="search"
         placeholder="Search..."
         aria-label="Search"
+        onChange={(e) => setSearchInput(e.target.value)}
       />
       {/* <button class="btn btn-outline-success" type="submit">
         Search
