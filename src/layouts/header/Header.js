@@ -2,9 +2,11 @@ import Logo from './Logo';
 import SearchBar from './SearchBar';
 import VisitorUserMenu from './VisitorUserMenu';
 import AuthUserMenu from './AuthUserMenu';
+import { useAuth } from '../../contexts/AuthContext';
 
 function Header() {
-  let user = 0;
+  const { user } = useAuth();
+
   return (
     <nav className="navbar navbar-expand-lg min-vh-15">
       <div className="container-fluid marginx-7">

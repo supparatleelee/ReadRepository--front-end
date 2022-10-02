@@ -51,7 +51,7 @@ function LandingPage() {
           </p>
           <button
             type="button"
-            class="btn btn-secondary btn-lg px-5 py-2 mt-2"
+            className="btn btn-secondary btn-lg px-5 py-2 mt-2"
             onClick={() => setIsOpenModal2(true)}
           >
             <span style={{ fontSize: '16px' }}>Get Started</span>

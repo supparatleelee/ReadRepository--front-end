@@ -19,8 +19,8 @@ function LoadingContextProvider({ children }) {
   );
 }
 
+export default LoadingContextProvider;
+
 export const useLoading = () => {
   return useContext(LoadingContext);
 };
-
-export default LoadingContextProvider;

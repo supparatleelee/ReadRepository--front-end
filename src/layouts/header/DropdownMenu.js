@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Logout, SettingPrimaryColor } from '../../assets/icons';
 import Avatar from '../../components/ui/Avatar';
+import { useAuth } from '../../contexts/AuthContext';
 
 function DropdownMenu({ open, onClose }) {
+  const { logout } = useAuth();
+
   return (
     <ul
       className={`dropdown-menu px-2 mt-1 border shadow-sm rounded-xl w-sm-90 ${
@@ -33,7 +36,10 @@ function DropdownMenu({ open, onClose }) {
         </button>
       </li>
       <li>
-        <button className="dropdown-item p-2 d-flex align-items-center gap-3 hover-bg-neutral-100 hover-rounded-lg">
+        <button
+          className="dropdown-item p-2 d-flex align-items-center gap-3 hover-bg-neutral-100 hover-rounded-lg"
+          onClick={logout}
+        >
           <Logout />
           <small className="text-black fw-bold">Log Out</small>
         </button>

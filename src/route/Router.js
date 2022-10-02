@@ -9,9 +9,11 @@ import BookInfoPage from '../pages/BookInfoPage';
 import UserCollectionPage from '../pages/UserCollectionPage';
 import LandingPage from '../pages/LandingPage';
 import SideNavLayout from '../layouts/sidenav/SideNavLayout';
+import { useAuth } from '../contexts/AuthContext';
 
 function Router() {
-  let user = 0;
+  const { user } = useAuth();
+
   return (
     <Routes>
       {user ? (
