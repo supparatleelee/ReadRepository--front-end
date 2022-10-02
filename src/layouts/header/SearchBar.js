@@ -1,7 +1,17 @@
+import { useRef } from 'react';
 import { useSearchContext } from '../../contexts/SearchContext';
 
 function SearchBar() {
+  const searchInputEl = useRef();
+
   const { setSearchInput } = useSearchContext();
+
+  const handleKeyUpEnter = (e) => {
+    if (e.key === 'ArrowRight') {
+      setSearchInput(e.target.value);
+      searchInputEl.current.value = '';
+    }
+  };
 
   return (
     <form className="d-flex" role="search">
@@ -10,9 +20,11 @@ function SearchBar() {
         type="search"
         placeholder="Search..."
         aria-label="Search"
-        onChange={(e) => setSearchInput(e.target.value)}
+        // onChange={(e) => setSearchInput(e.target.value)}
+        ref={searchInputEl}
+        onKeyUp={handleKeyUpEnter}
       />
-      {/* <button class="btn btn-outline-success" type="submit">
+      {/* <button class="btn btn-outline-primary" type="submit">
         Search
       </button> */}
     </form>
