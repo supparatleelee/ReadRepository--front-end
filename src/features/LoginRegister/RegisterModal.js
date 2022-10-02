@@ -34,8 +34,14 @@ function RegisterModal({ open, onClose }) {
             <form>
               <input
                 type="text"
-                placeholder="Username"
-                name="username"
+                placeholder="First Name"
+                name="firstname"
+                className="d-block w-100 mb-3 border-radius-10px p-2 border border-secondary"
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
+                name="lastname"
                 className="d-block w-100 mb-3 border-radius-10px p-2 border border-secondary"
               />
               <input
