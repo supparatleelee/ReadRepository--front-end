@@ -10,7 +10,7 @@ function SearchPage() {
     >
       <SearchHeader />
       <SearchResultContainer />
-      <SearchPagination />
+      {/* <SearchPagination /> */}
     </div>
   );
 }

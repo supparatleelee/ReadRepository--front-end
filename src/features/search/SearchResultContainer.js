@@ -2,8 +2,8 @@ import { useSearchContext } from '../../contexts/SearchContext';
 import SearchResultItem from './SearchResultItem';
 
 function SearchResultContainer() {
-  const { searchResults } = useSearchContext(); //[{...}, {...}, {...}]
-  console.log(searchResults, 'search results');
+  const { searchResults, showSearchResultsPerPage } = useSearchContext(); //[{...}, {...}, {...}]
+  // console.log(searchResults, 'search results');
 
   return (
     <div className="h-80 border-radius-10px">
