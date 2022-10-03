@@ -6,7 +6,10 @@ function SearchResultContainer() {
   // console.log(searchResults, 'search results');
 
   return (
-    <div className="h-80 border-radius-10px">
+    <div
+      className="border-radius-10px bg-white"
+      style={{ marginBottom: '100px' }}
+    >
       <div className="d-flex flex-wrap">
         {searchResults.map((item, index) => (
           <SearchResultItem

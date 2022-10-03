@@ -7,7 +7,7 @@ function SearchResultItem({ title, authorName, coverOLID }) {
 
   return (
     <div
-      style={{ width: '200px', marginTop: '20px' }}
+      style={{ width: '200px', marginTop: '40px' }}
       className="d-flex flex-column justify-content-between mx-1"
     >
       <img
