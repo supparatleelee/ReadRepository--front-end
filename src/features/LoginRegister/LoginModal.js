@@ -36,10 +36,11 @@ function LoginModal({ open, onClose }) {
     e.preventDefault();
     try {
       startLoading();
+      onClose();
       await login(input);
       toast.success('succes login');
     } catch (err) {
-      toast.error(err.response.data.msg);
+      toast.error(err.response?.data.msg);
     } finally {
       stopLoading();
     }
