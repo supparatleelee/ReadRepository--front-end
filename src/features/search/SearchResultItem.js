@@ -2,12 +2,20 @@ import { useState } from 'react';
 import { ArrowDown } from '../../assets/icons';
 import AddToCollectionDropdown from './AddToCollectionDropdown';
 
-function SearchResultItem() {
+function SearchResultItem({ title, authorName, coverOLID }) {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div style={{ width: '200px', marginTop: '20px' }}>
+    <div
+      style={{ width: '200px', marginTop: '20px' }}
+      className="d-flex flex-column justify-content-between mx-1"
+    >
       <img
-        src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780544947221_p0_v6_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D"
+        src={
+          coverOLID
+            ? `https://covers.openlibrary.org/b/olid/${coverOLID}-M.jpg`
+            : 'https://unmpress.com/sites/default/files/default_images/no_image_book.jpg'
+        }
         width="80px"
         height="122px"
         alt="Book Result Item"
@@ -20,10 +28,10 @@ function SearchResultItem() {
         className="text-primary text-center"
         style={{ fontSize: '16px', marginBottom: '3px' }}
       >
-        Peak
+        {title || 'Undefined Book Title'}
       </h1>
       <h2 className="text-primary text-center" style={{ fontSize: '14px' }}>
-        Anders Ericsson
+        {authorName || 'Undefined Author Name'}
       </h2>
 
       <div className="text-center">

@@ -1,30 +1,35 @@
 import { createContext, useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import * as searchService from '../api/searchApi';
+
 const SearchContext = createContext();
 
 function SearchContextProvider({ children }) {
-  const [searchInput, setSearchInput] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
-  const navigate = useNavigate();
+  const searchBooksList = async (bookTitle) => {
+    try {
+      if (bookTitle === '') {
+        return toast.error('Input Book Title');
+      }
 
-  const handleChangePageBySearchSubmit = () => {
-    if (searchInput === '') {
-      navigate('/search');
+      const res = await searchService.getBooksList({ bookTitle: bookTitle });
+      setSearchResults(res.data.searchBooksList.docs);
+      toast.success('Success extract data from Open Library API');
+    } catch (err) {
+      console.log(err);
+      toast.error(err.response?.data.msg);
     }
   };
-  // handleChangePageBySearchSubmit();
-  // Infinite Loop
-  const searchQueryString = searchInput.replace(' ', '+');
 
   return (
-    <SearchContext.Provider value={{ searchInput, setSearchInput }}>
+    <SearchContext.Provider value={{ searchBooksList, searchResults }}>
       {children}
     </SearchContext.Provider>
   );
 }
 
-export default SearchContextProvider;
+const useSearchContext = () => useContext(SearchContext);
+export { SearchContext, useSearchContext };
 
-export const useSearchContext = () => {
-  return useContext(SearchContext);
-};
+export default SearchContextProvider;

@@ -1,33 +1,35 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useSearchContext } from '../../contexts/SearchContext';
 
 function SearchBar() {
+  const { searchBooksList } = useSearchContext();
+
   const searchInputEl = useRef();
+  const navigate = useNavigate();
 
-  const { setSearchInput } = useSearchContext();
-
-  const handleKeyUpEnter = (e) => {
-    if (e.key === 'ArrowRight') {
-      setSearchInput(e.target.value);
+  const handleKeyUpEnter = async (e) => {
+    if (e.key === 'Enter') {
+      await searchBooksList(e.target.value);
+      navigate('/search');
       searchInputEl.current.value = '';
     }
   };
 
   return (
-    <form className="d-flex" role="search">
+    <div className="d-flex" role="search">
       <input
         className="form-control me-2 search-icon min-w-50vh"
         type="search"
         placeholder="Search..."
         aria-label="Search"
-        // onChange={(e) => setSearchInput(e.target.value)}
         ref={searchInputEl}
         onKeyUp={handleKeyUpEnter}
       />
       {/* <button class="btn btn-outline-primary" type="submit">
         Search
       </button> */}
-    </form>
+    </div>
   );
 }
 

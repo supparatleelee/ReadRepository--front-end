@@ -1,19 +1,21 @@
+import { useSearchContext } from '../../contexts/SearchContext';
 import SearchResultItem from './SearchResultItem';
 
 function SearchResultContainer() {
+  const { searchResults } = useSearchContext(); //[{...}, {...}, {...}]
+  console.log(searchResults, 'search results');
+
   return (
     <div className="h-80 border-radius-10px">
-      {/* .map here */}
-      {/* {bookList.map((item) => (
-        <SearchResultItem />
-      ))} */}
       <div className="d-flex flex-wrap">
-        <SearchResultItem />
-        <SearchResultItem />
-        <SearchResultItem />
-        <SearchResultItem />
-        <SearchResultItem />
-        <SearchResultItem />
+        {searchResults.map((item, index) => (
+          <SearchResultItem
+            key={index}
+            title={searchResults[index].title}
+            authorName={searchResults[index].author_name}
+            coverOLID={searchResults[index].cover_edition_key}
+          />
+        ))}
       </div>
     </div>
   );
