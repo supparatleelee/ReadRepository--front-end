@@ -9,6 +9,7 @@ import BookInfoPage from '../pages/BookInfoPage';
 import UserCollectionPage from '../pages/UserCollectionPage';
 import LandingPage from '../pages/LandingPage';
 import SideNavLayout from '../layouts/sidenav/SideNavLayout';
+import VisitorSearchPage from '../pages/VisitorSearchPage';
 import { useAuth } from '../contexts/AuthContext';
 
 function Router() {
@@ -39,6 +40,7 @@ function Router() {
       ) : (
         <Route path="/" element={<HeaderLayout />}>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/search" element={<VisitorSearchPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       )}
