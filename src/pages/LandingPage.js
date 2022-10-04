@@ -27,7 +27,7 @@ function LandingPage() {
       >
         <div
           style={{
-            width: '90%',
+            width: '60%',
             marginTop: '20vh',
             marginLeft: '12%',
             letterSpacing: '2px',
