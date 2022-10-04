@@ -11,6 +11,7 @@ function DropdownMenu({ open, onClose }) {
       className={`dropdown-menu px-2 mt-1 border shadow-sm rounded-xl w-sm-90 ${
         open ? 'd-block' : ''
       }`}
+      style={{ animation: 'fadeDown 1s' }}
     >
       <li>
         <Link
@@ -21,7 +22,7 @@ function DropdownMenu({ open, onClose }) {
         >
           <Avatar />
           <div className="d-flex flex-column">
-            <span className="text-black fw-bold">Hsiao Li</span>
+            <span className="text-black fw-bold">Alex Chen</span>
             <small className="text-muted">See your profile</small>
           </div>
         </Link>

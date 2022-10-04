@@ -8,7 +8,7 @@ function SearchResultItem({ title, authorName, coverOLID, OLIDkey }) {
 
   return (
     <div
-      style={{ width: '200px', marginTop: '40px' }}
+      style={{ width: '200px', marginTop: '40px', animation: 'fadeIn 1s' }}
       className="d-flex flex-column justify-content-between mx-1"
     >
       <Link to={`/book/info/${coverOLID}`} className="text-decoration-none">

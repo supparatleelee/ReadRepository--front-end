@@ -15,6 +15,7 @@ function AddToCollectionDropdown({ open, onClose }) {
       className={`dropdown-menu px-2 mt-1 border shadow-sm rounded-xl w-sm-90 ${
         open ? 'd-block' : ''
       }`}
+      style={{ animation: 'fadeOpen 0.5s' }}
     >
       <div className="form-check">
         <input

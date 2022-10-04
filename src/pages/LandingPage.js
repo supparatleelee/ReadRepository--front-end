@@ -5,20 +5,16 @@ import { useState } from 'react';
 function LandingPage() {
   const [isOpenModal2, setIsOpenModal2] = useState(false);
   return (
-    <div
-      className="d-flex"
-      // style={{ display: 'flex' }}
-    >
+    <div className="d-flex">
       <div
         style={{
-          backgroundColor: 'salmon',
           borderRadius: '0px 10px 0 0',
           marginLeft: '0',
         }}
       >
         <img
           src={landingPageImg}
-          // width={250}
+          style={{ animation: 'fadeOpen 2s' }}
           height={671}
           alt="Book"
         ></img>
@@ -26,7 +22,6 @@ function LandingPage() {
 
       <div
         style={{
-          // backgroundColor: 'blue',
           width: '100%',
         }}
       >
@@ -37,6 +32,7 @@ function LandingPage() {
             marginLeft: '12%',
             letterSpacing: '2px',
             lineHeight: '2em',
+            animation: 'fadeIn 2s',
           }}
         >
           <h1 className="text-primary" style={{ fontSize: '52px' }}>

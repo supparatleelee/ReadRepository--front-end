@@ -38,7 +38,7 @@ function HomePage() {
 
           <div
             className="get-started-content border-raduis-10px w-100 border-radius-10px mt-3 box-shadow-5610"
-            style={{ height: '100%', padding: '25px' }}
+            style={{ height: '100%', padding: '25px', animation: 'fadeIn 1s' }}
           >
             <p className="text-secondary" style={{ fontWeight: 500 }}>
               Input your name and other information for more personalised
