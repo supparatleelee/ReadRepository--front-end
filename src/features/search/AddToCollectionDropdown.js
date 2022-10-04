@@ -1,42 +1,54 @@
+import { useState } from 'react';
+
 function AddToCollectionDropdown({ open, onClose }) {
+  const [checked, setChecked] = useState(false);
+
+  const handleChecked = (e) => {
+    setChecked(e.target.checked);
+    console.log(e.target);
+    console.log(e.target.value);
+    console.log(e.target.checked);
+  };
+
   return (
     <div
       className={`dropdown-menu px-2 mt-1 border shadow-sm rounded-xl w-sm-90 ${
         open ? 'd-block' : ''
       }`}
     >
-      <div class="form-check">
+      <div className="form-check">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
-          value=""
+          value="want-to-read"
           id="flexCheckDefault"
+          onChange={handleChecked}
         />
-        <label class="form-check-label" for="flexCheckDefault">
+        <label className="form-check-label" htmlFor="flexCheckDefault">
           Want to Read
         </label>
       </div>
-      <div class="form-check">
+      <div className="form-check">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
-          value=""
+          value="currently-reading"
           id="flexCheckChecked"
-          checked
+          onChange={handleChecked}
         />
-        <label class="form-check-label" for="flexCheckChecked">
+        <label className="form-check-label" htmlFor="flexCheckChecked">
           Currently Reading
         </label>
       </div>
-      <div class="form-check">
+      <div className="form-check">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
-          value=""
+          value="read"
           id="flexCheckChecked"
-          checked
+          onChange={handleChecked}
         />
-        <label class="form-check-label" for="flexCheckChecked">
+        <label className="form-check-label" htmlFor="flexCheckChecked">
           Read
         </label>
       </div>

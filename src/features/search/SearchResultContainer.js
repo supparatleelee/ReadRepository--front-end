@@ -3,7 +3,7 @@ import SearchResultItem from './SearchResultItem';
 
 function SearchResultContainer() {
   const { searchResults } = useSearchContext(); //[{...}, {...}, {...}]
-  console.log(searchResults, 'search results');
+  // console.log(searchResults, 'search results');
 
   return (
     <div
