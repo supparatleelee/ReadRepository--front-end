@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowDown } from '../../assets/icons';
 import AddToCollectionDropdown from './AddToCollectionDropdown';
+// import { Link } from 'react-router-dom';
 
 function SearchResultItem({ title, authorName, coverOLID, OLIDkey }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,7 @@ function SearchResultItem({ title, authorName, coverOLID, OLIDkey }) {
       style={{ width: '200px', marginTop: '40px' }}
       className="d-flex flex-column justify-content-between mx-1"
     >
+      {/* <Link to={`/book/info/${coverOLID}`}> */}
       <a
         className="d-flex flex-column justify-content-between mx-1 text-decoration-none"
         href={`https://openlibrary.org${OLIDkey}`}
@@ -40,6 +42,7 @@ function SearchResultItem({ title, authorName, coverOLID, OLIDkey }) {
           {authorName || 'Undefined Author Name'}
         </h2>
       </a>
+      {/* </Link> */}
 
       {/* <div className="text-center">
         <span class="fa fa-star checked"></span>
