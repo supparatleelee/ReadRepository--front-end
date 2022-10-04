@@ -2,8 +2,8 @@ import { useSearchContext } from '../../contexts/SearchContext';
 import SearchResultItem from './SearchResultItem';
 
 function SearchResultContainer() {
-  const { searchResults, showSearchResultsPerPage } = useSearchContext(); //[{...}, {...}, {...}]
-  // console.log(searchResults, 'search results');
+  const { searchResults } = useSearchContext(); //[{...}, {...}, {...}]
+  console.log(searchResults, 'search results');
 
   return (
     <div
@@ -17,6 +17,7 @@ function SearchResultContainer() {
             title={searchResults[index].title}
             authorName={searchResults[index].author_name}
             coverOLID={searchResults[index].cover_edition_key}
+            OLIDkey={searchResults[index].key}
           />
         ))}
       </div>

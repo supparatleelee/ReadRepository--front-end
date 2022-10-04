@@ -1,5 +1,5 @@
 import SearchHeader from '../features/search/SearchHeader';
-import SearchPagination from '../features/search/SearchPagination';
+// import SearchPagination from '../features/search/SearchPagination';
 import SearchResultContainer from '../features/search/SearchResultContainer';
 
 function SearchPage() {

@@ -1,14 +1,17 @@
 import { createContext, useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import * as searchService from '../api/searchApi';
+import { useLoading } from './LoadingContext';
 
 const SearchContext = createContext();
 
 function SearchContextProvider({ children }) {
   const [searchResults, setSearchResults] = useState([]);
+  const { startLoading, stopLoading } = useLoading();
 
   const searchBooksList = async (bookTitle) => {
     try {
+      startLoading();
       if (bookTitle === '') {
         return toast.error('Input Book Title');
       }
@@ -19,6 +22,8 @@ function SearchContextProvider({ children }) {
     } catch (err) {
       console.log(err);
       toast.error(err.response?.data.msg);
+    } finally {
+      stopLoading();
     }
   };
 
