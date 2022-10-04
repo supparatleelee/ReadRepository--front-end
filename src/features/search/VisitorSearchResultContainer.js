@@ -10,7 +10,7 @@ function VisitorSearchResultContainer() {
       className="border-radius-10px bg-white"
       style={{ marginBottom: '100px' }}
     >
-      <div className="d-flex flex-wrap">
+      <div className="d-flex flex-wrap justify-content-around">
         {searchResults.map((item, index) => (
           <VisitorSearchResultItem
             key={index}

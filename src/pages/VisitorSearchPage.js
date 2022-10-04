@@ -4,7 +4,7 @@ import VisitorSearchResultContainer from '../features/search/VisitorSearchResult
 function VisitorSearchPage() {
   return (
     <div
-      className="d-block margin-left-8vw w-100 h-100"
+      className="d-block margin-left-8vw w-84 h-100"
       style={{ position: 'relative' }}
     >
       <SearchHeader />

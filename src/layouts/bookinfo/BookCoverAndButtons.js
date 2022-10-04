@@ -58,19 +58,19 @@ function BookCoverAndButtons() {
         >
           Buy This Book
         </button> */}
-        <button
-          type="button"
-          className="btn btn-outline-primary mt-2 w-100 border-radius-10px"
+        <a
+          className="text-decoration-none"
+          href={`https://openlibrary.org/works/${bookCoverOLID}`}
+          target="_blank"
+          rel="noreferrer"
         >
-          <a
-            className="text-decoration-none"
-            href={`https://openlibrary.org/works/${bookCoverOLID}`}
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            className="btn btn-outline-primary mt-2 w-100 border-radius-10px"
           >
             Open in Open Library
-          </a>
-        </button>
+          </button>
+        </a>
       </div>
     </div>
   );

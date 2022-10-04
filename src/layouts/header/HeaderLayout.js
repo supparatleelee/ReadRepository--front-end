@@ -2,8 +2,11 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Container from '../container/Container';
 import bg from '../../assets/images/bg.png';
+import { useAuth } from '../../contexts/AuthContext';
+import VisitorContainer from '../container/VisitorContainer';
 
 function HeaderLayout() {
+  const { user } = useAuth();
   return (
     <div
       style={{
@@ -13,9 +16,15 @@ function HeaderLayout() {
       }}
     >
       <Header />
-      <Container>
-        <Outlet />
-      </Container>
+      {user ? (
+        <Container>
+          <Outlet />
+        </Container>
+      ) : (
+        <VisitorContainer>
+          <Outlet />
+        </VisitorContainer>
+      )}
     </div>
   );
 }
