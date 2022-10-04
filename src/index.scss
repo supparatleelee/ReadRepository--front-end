@@ -131,6 +131,18 @@ code {
     transform: translateY(0);
   }
 }
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-1vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes fadeOpen {
   0% {
     opacity: 0;

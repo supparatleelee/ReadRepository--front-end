@@ -4,7 +4,7 @@ import Avatar from '../../components/ui/Avatar';
 import { useAuth } from '../../contexts/AuthContext';
 
 function DropdownMenu({ open, onClose }) {
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
 
   return (
     <ul
@@ -22,7 +22,9 @@ function DropdownMenu({ open, onClose }) {
         >
           <Avatar />
           <div className="d-flex flex-column">
-            <span className="text-black fw-bold">Alex Chen</span>
+            <span className="text-black fw-bold">
+              {user.firstName + ' ' + user.lastName}
+            </span>
             <small className="text-muted">See your profile</small>
           </div>
         </Link>

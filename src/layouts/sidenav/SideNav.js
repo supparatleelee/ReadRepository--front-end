@@ -9,7 +9,7 @@ import {
 
 function SideNav() {
   return (
-    <div style={{ width: '25%', animation: 'fadeIn 1s' }}>
+    <div style={{ width: '25%', animation: 'fadeRight 1s' }}>
       <ul className="nav flex-column">
         <li className="nav-item mb-5">
           <NavLink className="nav-link active" aria-current="page" end to="/">
