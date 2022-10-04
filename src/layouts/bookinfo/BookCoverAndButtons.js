@@ -1,13 +1,20 @@
 import { useState } from 'react';
 import { ArrowDown } from '../../assets/icons';
+import { useBookContext } from '../../contexts/BookContext';
 import AddToCollectionDropdown from '../../features/search/AddToCollectionDropdown';
 
 function BookCoverAndButtons() {
   const [isOpen, setIsOpen] = useState(false);
+  const { bookCoverOLID } = useBookContext();
+
   return (
     <div className="w-30">
       <img
-        src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B600%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&source=url%5Bhttps://prodimage.images-bn.com/pimages/9780544947221_p0_v6_s600x595.jpg%5D&scale=options%5Blimit%5D,size%5B600x10000%5D&sink=format%5Bwebp%5D"
+        src={
+          bookCoverOLID
+            ? `https://covers.openlibrary.org/b/olid/${bookCoverOLID}-M.jpg`
+            : 'https://unmpress.com/sites/default/files/default_images/no_image_book.jpg'
+        }
         width="190px"
         height="280px"
         alt="Book Result Item"
@@ -45,11 +52,24 @@ function BookCoverAndButtons() {
           onClose={() => setIsOpen(false)}
         />
 
-        <button
+        {/* <button
           type="button"
           className="btn btn-secondary mt-2 w-100 border-radius-10px"
         >
           Buy This Book
+        </button> */}
+        <button
+          type="button"
+          className="btn btn-outline-primary mt-2 w-100 border-radius-10px"
+        >
+          <a
+            className="text-decoration-none"
+            href={`https://openlibrary.org/works/${bookCoverOLID}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open in Open Library
+          </a>
         </button>
       </div>
     </div>

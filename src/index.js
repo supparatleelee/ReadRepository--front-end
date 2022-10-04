@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import SearchContextProvider from './contexts/SearchContext';
 import LoadingContextProvider from './contexts/LoadingContext';
 import AuthContextProvider from './contexts/AuthContext';
+import BookContextProvider from './contexts/BookContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,7 +20,9 @@ root.render(
       <LoadingContextProvider>
         <AuthContextProvider>
           <SearchContextProvider>
-            <App />
+            <BookContextProvider>
+              <App />
+            </BookContextProvider>
           </SearchContextProvider>
         </AuthContextProvider>
       </LoadingContextProvider>

@@ -2,16 +2,26 @@ import { useState } from 'react';
 import { ArrowDown } from '../../assets/icons';
 import AddToCollectionDropdown from './AddToCollectionDropdown';
 import { Link } from 'react-router-dom';
+import { useBookContext } from '../../contexts/BookContext';
 
-function SearchResultItem({ title, authorName, coverOLID, OLIDkey }) {
+function SearchResultItem({ title, authorName, coverOLID }) {
   const [isOpen, setIsOpen] = useState(false);
+  const { getBookInfo, sendBookCoverOLID } = useBookContext();
+
+  const handleSendOLID = async (e) => {
+    await getBookInfo(coverOLID, authorName);
+  };
 
   return (
     <div
       style={{ width: '200px', marginTop: '40px', animation: 'fadeIn 1s' }}
       className="d-flex flex-column justify-content-between mx-1"
     >
-      <Link to={`/book/info/${coverOLID}`} className="text-decoration-none">
+      <Link
+        to={`/book/info/${coverOLID}`}
+        className="text-decoration-none"
+        onClick={handleSendOLID}
+      >
         <img
           src={
             coverOLID

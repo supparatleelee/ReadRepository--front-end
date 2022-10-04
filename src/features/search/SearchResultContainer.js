@@ -17,7 +17,6 @@ function SearchResultContainer() {
             title={searchResults[index].title}
             authorName={searchResults[index].author_name}
             coverOLID={searchResults[index].cover_edition_key}
-            OLIDkey={searchResults[index].key}
           />
         ))}
       </div>
