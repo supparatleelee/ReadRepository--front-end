@@ -8,7 +8,9 @@ function BookCoverAndButtons() {
   const { bookCoverOLID, addBookToList } = useBookContext();
 
   const handleCheckedBookStauts = async (e) => {
-    await addBookToList(bookCoverOLID, e.target.value);
+    if (e.target.checked === true) {
+      await addBookToList(bookCoverOLID, e.target.value);
+    }
   };
 
   return (
