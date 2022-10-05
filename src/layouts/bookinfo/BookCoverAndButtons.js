@@ -1,15 +1,27 @@
 import { useState } from 'react';
-import { ArrowDown } from '../../assets/icons';
+import { ArrowDown, ArrowDownPrimary } from '../../assets/icons';
 import { useBookContext } from '../../contexts/BookContext';
 import AddToCollectionDropdown from '../../features/search/AddToCollectionDropdown';
 
 function BookCoverAndButtons() {
   const [isOpen, setIsOpen] = useState(false);
-  const { bookCoverOLID, addBookToList } = useBookContext();
+  const { bookCoverOLID, addBookToList, thisBookStatus } = useBookContext();
 
   const handleCheckedBookStauts = async (e) => {
     if (e.target.checked === true) {
       await addBookToList(bookCoverOLID, e.target.value);
+    }
+  };
+
+  const formatBookStatus = () => {
+    if (thisBookStatus === 'WANT_TO_READ') {
+      return 'Want to Read';
+    }
+    if (thisBookStatus === 'CURRENTLY_READING') {
+      return 'CurrentlyReading';
+    }
+    if (thisBookStatus === 'READ') {
+      return 'Read';
     }
   };
 
@@ -32,24 +44,30 @@ function BookCoverAndButtons() {
         <div style={{ marginTop: '20px' }} className="text-center w-100">
           <button
             type="button"
-            className="btn btn-primary w-75"
+            className={`btn btn-${
+              thisBookStatus ? 'outline-primary' : 'primary'
+            } w-75`}
             style={{
               borderRadius: '10px 0 0 10px',
+              fontSize: '16px',
+              borderRight: 'none',
             }}
           >
-            Want to Read
+            {formatBookStatus() || 'Want to Read'}
           </button>
 
           <button
             type="button"
-            className="btn btn-primary w-20"
+            className={`btn btn-${
+              thisBookStatus ? 'outline-primary' : 'primary'
+            } w-20`}
             style={{
               borderRadius: '0 10px 10px 0',
               borderLeft: '1px solid #A8A278',
             }}
             onClick={() => setIsOpen((prev) => !prev)}
           >
-            <ArrowDown />
+            {thisBookStatus ? <ArrowDownPrimary /> : <ArrowDown />}
           </button>
         </div>
 

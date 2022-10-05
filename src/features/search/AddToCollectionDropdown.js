@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { CURRENTLY_READING, READ, WANT_TO_READ } from '../../config/env';
 import { useBookContext } from '../../contexts/BookContext';
 
