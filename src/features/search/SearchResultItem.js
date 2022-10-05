@@ -6,7 +6,7 @@ import { useBookContext } from '../../contexts/BookContext';
 
 function SearchResultItem({ title, authorName, coverOLID }) {
   const [isOpen, setIsOpen] = useState(false);
-  const { getBookInfo, sendBookCoverOLID } = useBookContext();
+  const { getBookInfo } = useBookContext();
 
   const handleSendOLID = async (e) => {
     await getBookInfo(coverOLID, authorName);

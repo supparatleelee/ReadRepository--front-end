@@ -1,15 +1,15 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { CURRENTLY_READING, READ, WANT_TO_READ } from '../../config/env';
 
 function AddToCollectionDropdown({ open, onClose, onCheck }) {
-  const [checked, setChecked] = useState(false);
+  // const [checked, setChecked] = useState(false);
 
-  const handleChecked = (e) => {
-    setChecked(e.target.checked);
-    console.log(e.target);
-    console.log(e.target.value);
-    console.log(e.target.checked);
-  };
+  // const handleChecked = (e) => {
+  //   setChecked(e.target.checked);
+  //   console.log(e.target);
+  //   console.log(e.target.value);
+  //   console.log(e.target.checked);
+  // };
 
   return (
     <div
