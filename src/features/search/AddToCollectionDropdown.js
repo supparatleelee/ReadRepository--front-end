@@ -1,15 +1,9 @@
-// import { useState } from 'react';
+import { useEffect } from 'react';
 import { CURRENTLY_READING, READ, WANT_TO_READ } from '../../config/env';
+import { useBookContext } from '../../contexts/BookContext';
 
 function AddToCollectionDropdown({ open, onClose, onCheck }) {
-  // const [checked, setChecked] = useState(false);
-
-  // const handleChecked = (e) => {
-  //   setChecked(e.target.checked);
-  //   console.log(e.target);
-  //   console.log(e.target.value);
-  //   console.log(e.target.checked);
-  // };
+  const { thisBookStatus } = useBookContext();
 
   return (
     <div
@@ -25,6 +19,7 @@ function AddToCollectionDropdown({ open, onClose, onCheck }) {
           value={WANT_TO_READ}
           id="flexCheckDefault"
           onChange={onCheck}
+          defaultChecked={thisBookStatus === WANT_TO_READ ? true : false}
         />
         <label className="form-check-label" htmlFor="flexCheckDefault">
           Want to Read
@@ -37,6 +32,7 @@ function AddToCollectionDropdown({ open, onClose, onCheck }) {
           value={CURRENTLY_READING}
           id="flexCheckChecked"
           onChange={onCheck}
+          defaultChecked={thisBookStatus === CURRENTLY_READING ? true : false}
         />
         <label className="form-check-label" htmlFor="flexCheckChecked">
           Currently Reading
@@ -49,6 +45,7 @@ function AddToCollectionDropdown({ open, onClose, onCheck }) {
           value={READ}
           id="flexCheckChecked"
           onChange={onCheck}
+          defaultChecked={thisBookStatus === READ ? true : false}
         />
         <label className="form-check-label" htmlFor="flexCheckChecked">
           Read

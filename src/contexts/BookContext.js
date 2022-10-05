@@ -10,6 +10,7 @@ function BookContextProvider({ children }) {
   const [bookInfo, setBookInfo] = useState({});
   const [bookCoverOLID, setBookCoverOLID] = useState('');
   const [bookAuthorName, setBookAuthorName] = useState([]);
+  const [thisBookStatus, setThisBookStatus] = useState('');
 
   const getBookInfo = async (olid, authorName) => {
     try {
@@ -18,6 +19,7 @@ function BookContextProvider({ children }) {
       setBookInfo(res.data.bookInfo);
       setBookCoverOLID(olid);
       setBookAuthorName(authorName);
+      setThisBookStatus(res.data.bookStatus);
     } catch (err) {
       console.log(err);
       toast.error(err.response?.data.msg);
@@ -28,7 +30,7 @@ function BookContextProvider({ children }) {
 
   const addBookToList = async (olid, readingStatus) => {
     try {
-      const res = await bookService.addBookToList(olid, {
+      await bookService.addBookToList(olid, {
         readingStatus: readingStatus,
       });
       toast.success('Success add this book to your collection');
@@ -46,6 +48,7 @@ function BookContextProvider({ children }) {
         bookCoverOLID,
         bookAuthorName,
         addBookToList,
+        thisBookStatus,
       }}
     >
       {children}
