@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { CURRENTLY_READING, READ, WANT_TO_READ } from '../../config/env';
 
-function AddToCollectionDropdown({ open, onClose }) {
+function AddToCollectionDropdown({ open, onClose, onCheck }) {
   const [checked, setChecked] = useState(false);
 
   const handleChecked = (e) => {
@@ -21,9 +22,9 @@ function AddToCollectionDropdown({ open, onClose }) {
         <input
           className="form-check-input"
           type="checkbox"
-          value="want-to-read"
+          value={WANT_TO_READ}
           id="flexCheckDefault"
-          onChange={handleChecked}
+          onChange={onCheck}
         />
         <label className="form-check-label" htmlFor="flexCheckDefault">
           Want to Read
@@ -33,9 +34,9 @@ function AddToCollectionDropdown({ open, onClose }) {
         <input
           className="form-check-input"
           type="checkbox"
-          value="currently-reading"
+          value={CURRENTLY_READING}
           id="flexCheckChecked"
-          onChange={handleChecked}
+          onChange={onCheck}
         />
         <label className="form-check-label" htmlFor="flexCheckChecked">
           Currently Reading
@@ -45,9 +46,9 @@ function AddToCollectionDropdown({ open, onClose }) {
         <input
           className="form-check-input"
           type="checkbox"
-          value="read"
+          value={READ}
           id="flexCheckChecked"
-          onChange={handleChecked}
+          onChange={onCheck}
         />
         <label className="form-check-label" htmlFor="flexCheckChecked">
           Read

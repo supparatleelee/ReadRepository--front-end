@@ -26,9 +26,27 @@ function BookContextProvider({ children }) {
     }
   };
 
+  const addBookToList = async (olid, readingStatus) => {
+    try {
+      const res = await bookService.addBookToList(olid, {
+        readingStatus: readingStatus,
+      });
+      toast.success('Success add this book to your collection');
+    } catch (err) {
+      console.log(err);
+      toast.error(err.response?.data.msg);
+    }
+  };
+
   return (
     <BookContext.Provider
-      value={{ getBookInfo, bookInfo, bookCoverOLID, bookAuthorName }}
+      value={{
+        getBookInfo,
+        bookInfo,
+        bookCoverOLID,
+        bookAuthorName,
+        addBookToList,
+      }}
     >
       {children}
     </BookContext.Provider>
