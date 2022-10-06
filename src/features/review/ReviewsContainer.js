@@ -1,4 +1,4 @@
-import { ArrowDownPrimary, HideComment } from '../../assets/icons';
+import { HideComment } from '../../assets/icons';
 import OtherUsersReview from './OtherUsersReview';
 
 function ReviewsContainer() {

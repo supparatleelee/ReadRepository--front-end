@@ -163,7 +163,7 @@ export function HideComment() {
       <path
         d="M480 28L491.275 39.3444L502.55 28"
         stroke="#A8A278"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <defs>
         <linearGradient
@@ -174,8 +174,8 @@ export function HideComment() {
           y2="0"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#D9D9D9" />
-          <stop offset="1" stop-color="#D9D9D9" stop-opacity="0" />
+          <stop stopColor="#D9D9D9" />
+          <stop offset="1" stopColor="#D9D9D9" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>
