@@ -1,11 +1,11 @@
 import UserNoteContent from './UserNoteContent';
 import UserNoteHeader from './UserNoteHeader';
 
-function UserNote() {
+function UserNote({ onEditing, isEditing, onClose }) {
   return (
     <div className="border border-grey border-radius-10px w-100 bg-white">
-      <UserNoteHeader />
-      <UserNoteContent />
+      <UserNoteHeader onEditing={onEditing} />
+      <UserNoteContent isEditing={isEditing} onClose={onClose} />
     </div>
   );
 }

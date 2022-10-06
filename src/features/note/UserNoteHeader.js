@@ -1,10 +1,16 @@
 import Avatar from '../../components/ui/Avatar';
 import { useAuth } from '../../contexts/AuthContext';
+import { useBookContext } from '../../contexts/BookContext';
 
-function UserNoteHeader() {
+function UserNoteHeader({ onEditing }) {
   const {
     user: { firstName, lastName },
   } = useAuth();
+  const { deleteUserNote, bookCoverOLID } = useBookContext();
+
+  const handleOnDelete = async (e) => {
+    await deleteUserNote(bookCoverOLID);
+  };
 
   return (
     <div className="d-flex align-items-center gap-2 p-3">
@@ -23,10 +29,16 @@ function UserNoteHeader() {
         <small className="text-muted text-3">2m</small>
       </div>
       <div className="user-note-tools d-flex">
-        <button className="user-note-tool-item no-button-style text-secondary">
+        <button
+          className="user-note-tool-item no-button-style text-secondary"
+          onClick={onEditing}
+        >
           Edit
         </button>
-        <button className="user-note-tool-item no-button-style text-secondary">
+        <button
+          className="user-note-tool-item no-button-style text-secondary"
+          onClick={handleOnDelete}
+        >
           Delete
         </button>
       </div>

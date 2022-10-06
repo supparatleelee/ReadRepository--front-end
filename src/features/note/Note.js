@@ -1,13 +1,25 @@
+import { useBookContext } from '../../contexts/BookContext';
+import { useState } from 'react';
 import NoteForm from './NoteForm';
 import NoteHeader from './NoteHeader';
 import UserNote from './UserNote';
 
 function Note() {
-  let note = 0;
+  const { userNote } = useBookContext();
+  const [isEditing, setIsEditing] = useState(false);
+
   return (
     <>
       <NoteHeader />
-      {note ? <UserNote /> : <NoteForm />}
+      {userNote ? (
+        <UserNote
+          onEditing={() => setIsEditing(true)}
+          onClose={() => setIsEditing(false)}
+          isEditing={isEditing}
+        />
+      ) : (
+        <NoteForm />
+      )}
     </>
   );
 }

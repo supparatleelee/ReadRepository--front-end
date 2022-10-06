@@ -17,7 +17,6 @@ function BookContextProvider({ children }) {
     try {
       startLoading();
       const res = await bookService.getBookInfo(olid);
-      console.log(res.data);
       setBookInfo(res.data.bookInfo);
       setBookCoverOLID(olid);
       setBookAuthorName(authorName);
@@ -36,7 +35,53 @@ function BookContextProvider({ children }) {
       await bookService.addBookToList(olid, {
         readingStatus: readingStatus,
       });
+      setThisBookStatus(readingStatus);
       toast.success('Success add this book to your collection');
+    } catch (err) {
+      console.log(err);
+      toast.error(err.response?.data.msg);
+    }
+  };
+
+  const createUserNote = async (olid, noteContent) => {
+    try {
+      if (noteContent === '') {
+        return toast.error('Input Your Note before Submitting');
+      }
+
+      await bookService.createUserNote(olid, {
+        noteContent: noteContent,
+      });
+      setUserNote(noteContent);
+      toast.success('Success add your note with this book');
+    } catch (err) {
+      console.log(err);
+      toast.error(err.response?.data.msg);
+    }
+  };
+
+  const deleteUserNote = async (olid) => {
+    try {
+      await bookService.deleteUserNote(olid);
+      setUserNote('');
+      toast.success('Success delete your note with this book');
+    } catch (err) {
+      console.log(err);
+      toast.error(err.response?.data.msg);
+    }
+  };
+
+  const updateUserNote = async (olid, noteContent) => {
+    try {
+      if (noteContent === '') {
+        return toast.error('Input Your Note before Submitting');
+      }
+
+      await bookService.updateUserNote(olid, {
+        noteContent: noteContent,
+      });
+      setUserNote(noteContent);
+      toast.success('Success edit your note with this book');
     } catch (err) {
       console.log(err);
       toast.error(err.response?.data.msg);
@@ -53,6 +98,9 @@ function BookContextProvider({ children }) {
         addBookToList,
         thisBookStatus,
         userNote,
+        createUserNote,
+        deleteUserNote,
+        updateUserNote,
       }}
     >
       {children}
