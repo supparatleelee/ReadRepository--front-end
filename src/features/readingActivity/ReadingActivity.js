@@ -2,10 +2,17 @@ import ReadingActivityContainer from './ReadingActivityContainer';
 import ReadingActivityHeader from './ReadingActivityHeader';
 
 function ReadingActivity() {
+  let currentlyReading = 0;
   return (
     <>
-      <ReadingActivityHeader />
-      <ReadingActivityContainer />
+      {currentlyReading ? (
+        <>
+          <ReadingActivityHeader />
+          <ReadingActivityContainer />
+        </>
+      ) : (
+        ''
+      )}
     </>
   );
 }
