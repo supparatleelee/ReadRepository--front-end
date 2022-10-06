@@ -1,6 +1,5 @@
 function UserCollectionDisplayContainer() {
   return (
-    // 18px
     <div
       className="user-collection-container mt-5 d-flex justify-content-between"
       style={{ animation: 'fadeIn 1s' }}
@@ -10,7 +9,7 @@ function UserCollectionDisplayContainer() {
         style={{ width: '30%' }}
       >
         <h2 style={{ fontSize: '18px' }}>
-          Want To Read <span class="badge bg-secondary">12</span>
+          Want To Read <span className="badge bg-secondary">12</span>
         </h2>
       </button>
 
@@ -19,7 +18,7 @@ function UserCollectionDisplayContainer() {
         style={{ width: '30%' }}
       >
         <h2 style={{ fontSize: '18px' }}>
-          Currently Reading <span class="badge bg-secondary">2</span>
+          Currently Reading <span className="badge bg-secondary">2</span>
         </h2>
       </button>
 
@@ -28,7 +27,7 @@ function UserCollectionDisplayContainer() {
         style={{ width: '30%' }}
       >
         <h2 style={{ fontSize: '18px' }}>
-          Read <span class="badge bg-secondary">86</span>
+          Read <span className="badge bg-secondary">86</span>
         </h2>
       </button>
     </div>

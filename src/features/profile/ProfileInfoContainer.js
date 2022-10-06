@@ -1,11 +1,13 @@
 import { SettingSecondaryColor } from '../../assets/icons';
 import Avatar from '../../components/ui/Avatar';
 import { useAuth } from '../../contexts/AuthContext';
+import { useProfileContext } from '../../contexts/ProfileContext';
 
 function ProfileInfoContainer() {
   const {
     user: { role, firstName, lastName },
   } = useAuth();
+  const { allUserCollection } = useProfileContext();
 
   const formatRole = () => {
     if (role === 'READER') {
@@ -46,11 +48,14 @@ function ProfileInfoContainer() {
           className="mt-4 w-100 d-flex gap-3"
           style={{ animation: 'fadeOpen 1s' }}
         >
-          <button type="button" class="btn fw-semibold">
-            Book Collection <span class="badge text-bg-secondary">100</span>
+          <button type="button" className="btn fw-semibold">
+            Book Collection{' '}
+            <span className="badge text-bg-secondary">
+              {allUserCollection || 0}
+            </span>
           </button>
-          <button type="button" class="btn fw-semibold">
-            Friends <span class="badge text-bg-secondary">20</span>
+          <button type="button" className="btn fw-semibold">
+            Friends <span className="badge text-bg-secondary">20</span>
           </button>
         </div>
       </div>

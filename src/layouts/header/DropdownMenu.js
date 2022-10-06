@@ -2,9 +2,16 @@ import { Link } from 'react-router-dom';
 import { Logout, SettingPrimaryColor } from '../../assets/icons';
 import Avatar from '../../components/ui/Avatar';
 import { useAuth } from '../../contexts/AuthContext';
+import { useProfileContext } from '../../contexts/ProfileContext';
 
 function DropdownMenu({ open, onClose }) {
   const { logout, user } = useAuth();
+  const { getAllUserCollection } = useProfileContext();
+
+  const handleOnClick = async (e) => {
+    await getAllUserCollection(user.id);
+    onClose();
+  };
 
   return (
     <ul
@@ -15,10 +22,9 @@ function DropdownMenu({ open, onClose }) {
     >
       <li>
         <Link
-          // Change to /profile/${id} later
-          to="/profile/1"
+          to={`/profile/${user.id}`}
           className="dropdown-item p-2 d-flex align-items-center gap-3 hover-bg-neutral-100 hover-rounded-lg"
-          onClick={onClose}
+          onClick={handleOnClick}
         >
           <Avatar />
           <div className="d-flex flex-column">

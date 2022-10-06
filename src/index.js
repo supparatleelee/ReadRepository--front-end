@@ -12,6 +12,7 @@ import SearchContextProvider from './contexts/SearchContext';
 import LoadingContextProvider from './contexts/LoadingContext';
 import AuthContextProvider from './contexts/AuthContext';
 import BookContextProvider from './contexts/BookContext';
+import ProfileContextProvider from './contexts/ProfileContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,7 +22,9 @@ root.render(
         <AuthContextProvider>
           <SearchContextProvider>
             <BookContextProvider>
-              <App />
+              <ProfileContextProvider>
+                <App />
+              </ProfileContextProvider>
             </BookContextProvider>
           </SearchContextProvider>
         </AuthContextProvider>
