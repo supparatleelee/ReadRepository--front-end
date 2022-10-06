@@ -1,29 +1,36 @@
 function UserCollectionDisplayContainer() {
   return (
-    <div className="mt-5 d-flex">
-      <div className="want-to-read">
-        <h2 style={{ fontSize: '18px' }}>Want to Read</h2>
-        <div
-          className="bg-grey border-radius-10px mt-4"
-          style={{ width: '150px', height: '190px' }}
-        ></div>
-      </div>
-      <div className="vertical-line" style={{ margin: '0 100px' }}></div>
-      <div className="curently reading">
-        <h2 style={{ fontSize: '18px' }}>Currently Reading</h2>
-        <div
-          className="bg-grey border-radius-10px mt-4"
-          style={{ width: '150px', height: '190px' }}
-        ></div>
-      </div>
-      <div className="vertical-line" style={{ margin: '0 100px' }}></div>
-      <div className="read">
-        <h2 style={{ fontSize: '18px' }}>Read</h2>
-        <div
-          className="bg-grey border-radius-10px mt-4"
-          style={{ width: '150px', height: '190px' }}
-        ></div>
-      </div>
+    // 18px
+    <div
+      className="user-collection-container mt-5 d-flex justify-content-between"
+      style={{ animation: 'fadeIn 1s' }}
+    >
+      <button
+        className="btn want-to-read-Container bg-white p-4 border-radius-10px box-shadow-5610"
+        style={{ width: '30%' }}
+      >
+        <h2 style={{ fontSize: '18px' }}>
+          Want To Read <span class="badge bg-secondary">12</span>
+        </h2>
+      </button>
+
+      <button
+        className="btn currently-reading-Container bg-white p-4 border-radius-10px box-shadow-5610"
+        style={{ width: '30%' }}
+      >
+        <h2 style={{ fontSize: '18px' }}>
+          Currently Reading <span class="badge bg-secondary">2</span>
+        </h2>
+      </button>
+
+      <button
+        className="btn read-Container bg-white p-4 border-radius-10px box-shadow-5610"
+        style={{ width: '30%' }}
+      >
+        <h2 style={{ fontSize: '18px' }}>
+          Read <span class="badge bg-secondary">86</span>
+        </h2>
+      </button>
     </div>
   );
 }

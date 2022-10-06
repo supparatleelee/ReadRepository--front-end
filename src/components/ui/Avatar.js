@@ -1,7 +1,7 @@
 function Avatar({ size }) {
   return (
     <img
-      src="https://www.w3schools.com/images/picture.jpg"
+      src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_0.jpg"
       className="rounded-circle cursor-pointer"
       width={size || '32px'}
       height={size || '32px'}
