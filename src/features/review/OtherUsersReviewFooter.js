@@ -1,6 +1,6 @@
 import { Comment, Like } from '../../assets/icons';
 
-function UserReviewFooter() {
+function OtherUsersReviewFooter() {
   return (
     <div className="p-3 d-flex gap-4 align-items-center text-primary">
       <div>
@@ -16,4 +16,4 @@ function UserReviewFooter() {
   );
 }
 
-export default UserReviewFooter;
+export default OtherUsersReviewFooter;

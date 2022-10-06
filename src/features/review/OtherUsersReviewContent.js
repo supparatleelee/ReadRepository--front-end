@@ -1,4 +1,4 @@
-function UserReviewContent() {
+function OtherUsersReviewContent() {
   return (
     <div className="p-4">
       <p className=" lh-lg">
@@ -11,4 +11,4 @@ function UserReviewContent() {
   );
 }
 
-export default UserReviewContent;
+export default OtherUsersReviewContent;
