@@ -3,7 +3,7 @@ import UserNoteHeader from './UserNoteHeader';
 
 function UserNote() {
   return (
-    <div>
+    <div className="border border-grey border-radius-10px w-100 bg-white">
       <UserNoteHeader />
       <UserNoteContent />
     </div>

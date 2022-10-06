@@ -1,10 +1,10 @@
-function Avatar() {
+function Avatar({ size }) {
   return (
     <img
       src="https://www.w3schools.com/images/picture.jpg"
       className="rounded-circle cursor-pointer"
-      width="32px"
-      height="32px"
+      width={size || '32px'}
+      height={size || '32px'}
       alt="User Icon"
     />
   );
