@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { ArrowRightSecondaey } from '../assets/icons';
+import { useAuth } from '../contexts/AuthContext';
 
 function HomePage() {
+  const { user } = useAuth();
+
   return (
     <div className="margin-left-8vw w-100 h-80 d-flex justify-content-between">
-      {/*  */}
       <div className="left-div w-50">
-        {/* Left */}
         <div className="get-started-section" style={{ height: '40%' }}>
           <div className="get-started-hearder d-flex justify-content-between align-items-center">
             <h1
@@ -16,7 +17,7 @@ function HomePage() {
               Get Started
             </h1>
             <Link
-              to="/profile/1"
+              to={`/profile/${user.id}`}
               style={{
                 border: 'none',
                 backgroundColor: '#fff',
@@ -45,7 +46,6 @@ function HomePage() {
               experience!
             </p>
             <p style={{ fontWeight: 500 }}>You're almost all set!</p>
-            {/*  */}
 
             <div className="progress-bar-section d-flex align-items-center justify-content-between">
               <div
@@ -70,7 +70,7 @@ function HomePage() {
               </div>
               <span style={{ fontSize: '12px' }}>45%</span>
             </div>
-            {/*  */}
+
             <button
               type="button"
               className="btn btn-primary mt-2 w-20 border-radius-10px"
@@ -85,10 +85,8 @@ function HomePage() {
           </div>
         </div>
       </div>
-      {/*  */}
-      <div className="right-div w-50" style={{ marginLeft: '45px' }}>
-        {/* Right */}
-      </div>
+
+      <div className="right-div w-50" style={{ marginLeft: '45px' }}></div>
     </div>
   );
 }
