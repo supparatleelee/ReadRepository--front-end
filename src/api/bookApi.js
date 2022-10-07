@@ -4,6 +4,8 @@ export const getBookInfo = (olid) => axios.post(`/book/${olid}`);
 
 export const addBookToList = (olid, readingStatus) =>
   axios.post(`/book/${olid}/addToList`, readingStatus);
+export const deleteBookFromList = (olid) =>
+  axios.delete(`/book/${olid}/deleteFromList`);
 
 export const createUserNote = (olid, noteContent) =>
   axios.post(`/book/${olid}/note`, noteContent);

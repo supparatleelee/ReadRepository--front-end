@@ -10,6 +10,7 @@ function BookCoverAndButtons() {
 
   const handleCheckedBookStauts = async (e) => {
     await addBookToList(bookCoverOLID, e.target.value);
+    setIsOpen(false);
   };
 
   const formatBookStatus = () => {

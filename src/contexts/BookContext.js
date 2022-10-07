@@ -43,6 +43,17 @@ function BookContextProvider({ children }) {
     }
   };
 
+  const deleteBookFromList = async (olid) => {
+    try {
+      await bookService.deleteBookFromList(olid);
+      setThisBookStatus('');
+      toast.success('Success delete this book from your collection');
+    } catch (err) {
+      console.log(err);
+      toast.error(err.response?.data.msg);
+    }
+  };
+
   const createUserNote = async (olid, noteContent) => {
     try {
       if (noteContent === '') {
@@ -102,6 +113,7 @@ function BookContextProvider({ children }) {
         deleteUserNote,
         updateUserNote,
         setThisBookStatus,
+        deleteBookFromList,
       }}
     >
       {children}

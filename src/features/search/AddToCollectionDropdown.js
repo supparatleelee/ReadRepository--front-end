@@ -2,11 +2,12 @@ import { CURRENTLY_READING, READ, WANT_TO_READ } from '../../config/env';
 import { useBookContext } from '../../contexts/BookContext';
 
 function AddToCollectionDropdown({ open, onClose, onCheck }) {
-  const { thisBookStatus, setThisBookStatus } = useBookContext();
+  const { thisBookStatus, bookCoverOLID, deleteBookFromList } =
+    useBookContext();
 
-  const sendBookStatus = async (e) => {
-    setThisBookStatus(e.target.value);
-    await onCheck();
+  const handleDeleteFromList = async (e) => {
+    await deleteBookFromList(bookCoverOLID);
+    onClose();
   };
 
   return (
@@ -58,6 +59,14 @@ function AddToCollectionDropdown({ open, onClose, onCheck }) {
           Read
         </label>
       </div>
+
+      <butoon
+        type="button"
+        className="btn btn-outline-secondary border-radius-10px mt-2"
+        onClick={handleDeleteFromList}
+      >
+        Delete From List
+      </butoon>
     </form>
   );
 }
