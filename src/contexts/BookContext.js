@@ -12,6 +12,7 @@ function BookContextProvider({ children }) {
   const [bookAuthorName, setBookAuthorName] = useState([]);
   const [thisBookStatus, setThisBookStatus] = useState('');
   const [userNote, setUserNote] = useState('');
+  const [userNoteRes, setUserNoteRes] = useState({});
 
   const getBookInfo = async (olid, authorName) => {
     try {
@@ -60,10 +61,11 @@ function BookContextProvider({ children }) {
         return toast.error('Input Your Note before Submitting');
       }
 
-      await bookService.createUserNote(olid, {
+      const res = await bookService.createUserNote(olid, {
         noteContent: noteContent,
       });
       setUserNote(noteContent);
+      setUserNoteRes(res.data.note.createdAt);
       toast.success('Success add your note with this book');
     } catch (err) {
       console.log(err);
@@ -88,10 +90,11 @@ function BookContextProvider({ children }) {
         return toast.error('Input Your Note before Submitting');
       }
 
-      await bookService.updateUserNote(olid, {
+      const res = await bookService.updateUserNote(olid, {
         noteContent: noteContent,
       });
       setUserNote(noteContent);
+      setUserNoteRes(res.data.note.updatedAt);
       toast.success('Success edit your note with this book');
     } catch (err) {
       console.log(err);
@@ -114,6 +117,7 @@ function BookContextProvider({ children }) {
         updateUserNote,
         setThisBookStatus,
         deleteBookFromList,
+        userNoteRes,
       }}
     >
       {children}

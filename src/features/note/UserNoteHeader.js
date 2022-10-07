@@ -1,12 +1,13 @@
 import Avatar from '../../components/ui/Avatar';
 import { useAuth } from '../../contexts/AuthContext';
 import { useBookContext } from '../../contexts/BookContext';
+import { timeSince } from '../../utility/dataFormat';
 
 function UserNoteHeader({ onEditing }) {
   const {
     user: { firstName, lastName },
   } = useAuth();
-  const { deleteUserNote, bookCoverOLID } = useBookContext();
+  const { deleteUserNote, bookCoverOLID, userNoteRes } = useBookContext();
 
   const handleOnDelete = async (e) => {
     await deleteUserNote(bookCoverOLID);
@@ -26,7 +27,7 @@ function UserNoteHeader({ onEditing }) {
             {firstName + ' ' + lastName}'s Note
           </span>
         </a>
-        <small className="text-muted text-3">2m</small>
+        <small className="text-muted text-3">{timeSince(userNoteRes)}</small>
       </div>
       <div className="user-note-tools d-flex">
         <button
