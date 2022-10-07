@@ -101,6 +101,7 @@ function BookContextProvider({ children }) {
         createUserNote,
         deleteUserNote,
         updateUserNote,
+        setThisBookStatus,
       }}
     >
       {children}
