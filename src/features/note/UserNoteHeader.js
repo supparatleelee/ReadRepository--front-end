@@ -3,7 +3,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useBookContext } from '../../contexts/BookContext';
 import { timeSince } from '../../utility/dataFormat';
 
-function UserNoteHeader({ onEditing }) {
+function UserNoteHeader({ onEditing, onClose }) {
   const {
     user: { firstName, lastName },
   } = useAuth();
@@ -11,6 +11,7 @@ function UserNoteHeader({ onEditing }) {
 
   const handleOnDelete = async (e) => {
     await deleteUserNote(bookCoverOLID);
+    onClose();
   };
 
   return (
