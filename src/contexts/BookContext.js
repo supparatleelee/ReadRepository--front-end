@@ -86,10 +86,6 @@ function BookContextProvider({ children }) {
 
   const updateUserNote = async (olid, noteContent) => {
     try {
-      if (noteContent === '') {
-        return toast.error('Input Your Note before Submitting');
-      }
-
       const res = await bookService.updateUserNote(olid, {
         noteContent: noteContent,
       });
