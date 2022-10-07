@@ -54,7 +54,13 @@ function RegisterModal({ open, onClose }) {
   };
 
   return (
-    <div className="modal fade" tabIndex="-1" ref={modalEl} onClick={onClose}>
+    <div
+      className="modal fade"
+      id="register-modal"
+      tabIndex="-1"
+      ref={modalEl}
+      onClick={onClose}
+    >
       <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
         <div className="modal-content">
           <div className="modal-header">
@@ -62,6 +68,8 @@ function RegisterModal({ open, onClose }) {
               type="button"
               className="btn-close"
               onClick={onClose}
+              data-bs-dismiss="modal"
+              aria-label="Close"
             ></button>
           </div>
 
@@ -110,7 +118,15 @@ function RegisterModal({ open, onClose }) {
 
           <div className="modal-footer m-auto">
             <p>
-              Already have an account? <u>Log in</u>
+              Already have an account?{' '}
+              <button
+                data-bs-target="#login-modal"
+                data-bs-toggle="modal"
+                onClick={onClose}
+                className="no-button-style"
+              >
+                <u>Login</u>
+              </button>
             </p>
           </div>
         </div>

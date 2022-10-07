@@ -3,7 +3,6 @@ import { Modal as BsModal } from 'bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { useLoading } from '../../contexts/LoadingContext';
 import { toast } from 'react-toastify';
-// import RegisterModal from './RegisterModal';
 
 function LoginModal({ open, onClose }) {
   const modalEl = useRef();
@@ -47,13 +46,21 @@ function LoginModal({ open, onClose }) {
   };
 
   return (
-    <div className="modal fade" tabIndex="-1" ref={modalEl} onClick={onClose}>
+    <div
+      className="modal fade"
+      id="login-modal"
+      tabIndex="-1"
+      ref={modalEl}
+      onClick={onClose}
+    >
       <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
         <div className="modal-content">
           <div className="modal-header">
             <button
               type="button"
               className="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
               onClick={onClose}
             ></button>
           </div>
@@ -87,7 +94,15 @@ function LoginModal({ open, onClose }) {
 
           <div className="modal-footer m-auto">
             <p>
-              No account? <u>Create One</u>
+              No account?
+              <button
+                data-bs-target="#register-modal"
+                data-bs-toggle="modal"
+                onClick={onClose}
+                className="no-button-style"
+              >
+                <u>Create One</u>
+              </button>
             </p>
           </div>
         </div>
