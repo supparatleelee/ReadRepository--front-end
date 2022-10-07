@@ -5,8 +5,7 @@ import AddToCollectionDropdown from '../../features/search/AddToCollectionDropdo
 
 function BookCoverAndButtons() {
   const [isOpen, setIsOpen] = useState(false);
-  const { bookCoverOLID, addBookToList, thisBookStatus, setThisBookStatus } =
-    useBookContext();
+  const { bookCoverOLID, addBookToList, thisBookStatus } = useBookContext();
 
   const handleCheckedBookStauts = async (e) => {
     await addBookToList(bookCoverOLID, e.target.value);

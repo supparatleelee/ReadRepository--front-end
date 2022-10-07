@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
 import { ArrowRightSecondaey } from '../assets/icons';
 import { useAuth } from '../contexts/AuthContext';
+import { useProfileContext } from '../contexts/ProfileContext';
 
 function HomePage() {
   const { user } = useAuth();
+  const { getAllUserCollection } = useProfileContext();
+
+  const handleOnClick = async (e) => {
+    await getAllUserCollection(user.id);
+  };
 
   return (
     <div className="margin-left-8vw w-100 h-80 d-flex justify-content-between">
@@ -23,6 +29,7 @@ function HomePage() {
                 backgroundColor: '#fff',
                 textDecoration: 'none',
               }}
+              onClick={handleOnClick}
             >
               <span
                 className="text-secondary"
