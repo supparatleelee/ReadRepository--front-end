@@ -9,11 +9,7 @@ function ProfileInfoContainer() {
   const {
     user: { role, firstName, lastName },
   } = useAuth();
-  const {
-    allUserCollectionTotal,
-    // allUserCollectionLists,
-    // getBookInfoForUserBookCollection,
-  } = useProfileContext();
+  const { allUserCollectionTotal } = useProfileContext();
 
   const [isOpenModal1, setIsOpenModal1] = useState(false);
 
@@ -28,22 +24,6 @@ function ProfileInfoContainer() {
       return 'Admin';
     }
   };
-
-  // const handleBookInfoAndOpenModal = async (e) => {
-  //   const bookInfoData = allUserCollectionLists.map(
-  //     (item, index) => allUserCollectionLists[index].Book.bookOlid
-  //   );
-  //   // console.log(bookInfoData);
-
-  //   bookInfoData.map(
-  //     async (item, index) =>
-  //       await getBookInfoForUserBookCollection(bookInfoData[index])
-  //   );
-
-  //   // console.log(BookInfoArray);
-
-  //   setIsOpenModal1(true);
-  // };
 
   return (
     <div
@@ -76,8 +56,6 @@ function ProfileInfoContainer() {
             type="button"
             className="btn fw-semibold"
             onClick={() => setIsOpenModal1(true)}
-            // onClick={handleBookInfoAndOpenModal}
-            // getBookInfo function
           >
             Book Collection
             <span className="badge text-bg-secondary">
