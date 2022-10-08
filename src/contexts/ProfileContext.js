@@ -16,8 +16,11 @@ function ProfileContextProvider({ children }) {
       startLoading();
       const res = await profileService.getAllUserCollection(userId);
       setAllUserCollectionTotal(res.data.getAllUserCollection[0].total);
-      console.log(res.data.getAllUserCollection[1].collectionLists);
-      console.log(res.data.getAllUserCollection[0]);
+      // console.log(res.data.getAllUserCollection[0]);
+      // console.log(res.data.getAllUserCollection[1].collectionLists);
+      // console.log(
+      //   res.data.getAllUserCollection[1].collectionLists[0].bookStatus
+      // );
       setAllUserCollectionLists(
         res.data.getAllUserCollection[1].collectionLists
       );

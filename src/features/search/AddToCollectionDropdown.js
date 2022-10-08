@@ -60,13 +60,13 @@ function AddToCollectionDropdown({ open, onClose, onCheck }) {
         </label>
       </div>
 
-      <butoon
+      <button
         type="button"
         className="btn btn-outline-secondary border-radius-10px mt-2"
         onClick={handleDeleteFromList}
       >
         Delete From List
-      </butoon>
+      </button>
     </form>
   );
 }

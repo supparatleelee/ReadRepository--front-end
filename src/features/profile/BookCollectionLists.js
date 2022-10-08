@@ -1,9 +1,22 @@
 import { useState } from 'react';
-import { ArrowDown } from '../../assets/icons';
+import { ArrowDownPrimary } from '../../assets/icons';
 import AddToCollectionDropdown from '../search/AddToCollectionDropdown';
 
-function BookCollectionLists({ bookOlid, bookTitle }) {
+function BookCollectionLists({ bookOlid, bookTitle, bookStatus }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const formatBookStatus = () => {
+    if (bookStatus === 'WANT_TO_READ') {
+      return 'Want to Read';
+    }
+    if (bookStatus === 'CURRENTLY_READING') {
+      return 'CurrentlyReading';
+    }
+    if (bookStatus === 'READ') {
+      return 'Read';
+    }
+  };
+
   return (
     <>
       <div className="d-flex align-items-center p-3">
@@ -24,7 +37,7 @@ function BookCollectionLists({ bookOlid, bookTitle }) {
           className="collection-item-details w-100 d-flex justify-content-between"
           style={{ marginLeft: '40px' }}
         >
-          <div className="left-div d-flex flex-column justify-content-between">
+          <div className="left-div d-flex flex-column justify-content-between gap-1">
             <h1 style={{ fontSize: '22px' }}>{bookTitle}</h1>
             {/* <h2 style={{ fontSize: '20px' }}>Author's name</h2> */}
             <div className="user-rating d-flex align-items-center">
@@ -38,32 +51,32 @@ function BookCollectionLists({ bookOlid, bookTitle }) {
               </div>
             </div>
 
-            <div style={{ marginTop: '10px' }}>
+            <div style={{ marginTop: '10%' }}>
               <button
                 type="button"
-                className="btn btn-primary btn-sm"
-                style={{ borderRadius: '10px 0 0 10px' }}
+                className="btn btn-outline-primary btn-sm"
+                style={{ borderRadius: '10px 0 0 10px', borderRight: 'none' }}
               >
-                Want to Read
+                {formatBookStatus() || 'Want To Read'}
               </button>
 
               <button
                 type="button"
-                className="btn btn-primary btn-sm"
+                className="btn btn-outline-primary btn-sm"
                 style={{
                   borderRadius: '0 10px 10px 0',
                   borderLeft: '1px solid #A8A278',
                 }}
                 onClick={() => setIsOpen((prev) => !prev)}
               >
-                <ArrowDown />
+                <ArrowDownPrimary />
               </button>
             </div>
 
-            <AddToCollectionDropdown
+            {/* <AddToCollectionDropdown
               open={isOpen}
               onClose={() => setIsOpen(false)}
-            />
+            /> */}
           </div>
           <div className="right-div">
             <button className="no-button-style text-secondary">

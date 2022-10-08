@@ -48,6 +48,7 @@ function BookCollectionModal({ open, onClose }) {
                 index={index}
                 bookOlid={allUserCollectionLists[index].Book.bookOlid}
                 bookTitle={allUserCollectionLists[index].Book.bookData.title}
+                bookStatus={allUserCollectionLists[index].bookStatus}
               />
             ))}
           </div>

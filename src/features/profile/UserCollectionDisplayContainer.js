@@ -9,7 +9,7 @@ function UserCollectionDisplayContainer() {
         style={{ width: '30%' }}
       >
         <h2 style={{ fontSize: '18px' }}>
-          Want To Read <span className="badge bg-secondary">12</span>
+          Want To Read <span className="badge bg-secondary">1</span>
         </h2>
       </button>
 
@@ -18,7 +18,7 @@ function UserCollectionDisplayContainer() {
         style={{ width: '30%' }}
       >
         <h2 style={{ fontSize: '18px' }}>
-          Currently Reading <span className="badge bg-secondary">2</span>
+          Currently Reading <span className="badge bg-secondary">1</span>
         </h2>
       </button>
 
@@ -27,7 +27,7 @@ function UserCollectionDisplayContainer() {
         style={{ width: '30%' }}
       >
         <h2 style={{ fontSize: '18px' }}>
-          Read <span className="badge bg-secondary">86</span>
+          Read <span className="badge bg-secondary">1</span>
         </h2>
       </button>
     </div>
