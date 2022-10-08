@@ -19,7 +19,7 @@ function SearchBar() {
   return (
     <div className="d-flex" role="search">
       <input
-        className="form-control me-2 search-icon min-w-50vh box-shadow-5610"
+        className="form-control me-2 search-icon min-w-50vh"
         type="search"
         placeholder="Search..."
         aria-label="Search"

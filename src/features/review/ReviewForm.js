@@ -4,7 +4,7 @@ function ReviewForm() {
       <input
         type="text"
         className="form-control"
-        placeholder="What you think about this book?"
+        placeholder="What do you think about this book?"
         aria-label="user-review"
         aria-describedby="button-addon2"
       />
