@@ -19,16 +19,13 @@ function SearchBar() {
   return (
     <div className="d-flex" role="search">
       <input
-        className="form-control me-2 search-icon min-w-50vh"
+        className="form-control me-2 search-icon min-w-50vh box-shadow-5610"
         type="search"
         placeholder="Search..."
         aria-label="Search"
         ref={searchInputEl}
         onKeyUp={handleKeyUpEnter}
       />
-      {/* <button class="btn btn-outline-primary" type="submit">
-        Search
-      </button> */}
     </div>
   );
 }

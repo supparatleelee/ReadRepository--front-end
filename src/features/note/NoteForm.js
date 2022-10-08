@@ -35,7 +35,7 @@ function NoteForm({ isEditing, onClose }) {
   };
 
   return (
-    <div className="input-group mb-3">
+    <div className="input-group mb-3" style={{ animation: 'fadeOpen 1s' }}>
       {isEditing ? (
         <>
           <input
