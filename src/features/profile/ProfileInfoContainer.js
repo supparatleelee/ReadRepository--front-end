@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SettingSecondaryColor } from '../../assets/icons';
 import Avatar from '../../components/ui/Avatar';
 import { useAuth } from '../../contexts/AuthContext';
@@ -7,7 +8,7 @@ import BookCollectionModal from './BookCollectionModal';
 
 function ProfileInfoContainer() {
   const {
-    user: { role, firstName, lastName },
+    user: { role, firstName, lastName, id },
   } = useAuth();
   const { allUserCollectionTotal } = useProfileContext();
 
@@ -42,10 +43,13 @@ function ProfileInfoContainer() {
             </h1>
             <div className="btn btn-primary">{formatRole() || 'Reader'}</div>
           </div>
-          <button className="profile-setting d-flex align-items-center no-button-style bg-white">
+          <Link
+            to={`/profile/${id}/edit`}
+            className="profile-setting d-flex align-items-center no-button-style bg-white text-decoration-none"
+          >
             <SettingSecondaryColor />
             <span className="text-secondary">Edit Profile</span>
-          </button>
+          </Link>
         </div>
 
         <div
