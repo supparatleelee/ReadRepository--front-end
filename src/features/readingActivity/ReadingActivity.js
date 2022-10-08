@@ -1,17 +1,16 @@
+import { useBookContext } from '../../contexts/BookContext';
 import ReadingActivityContainer from './ReadingActivityContainer';
 import ReadingActivityHeader from './ReadingActivityHeader';
 
 function ReadingActivity() {
-  let currentlyReading = 0;
+  const { thisBookStatus } = useBookContext();
   return (
     <>
-      {currentlyReading ? (
+      {thisBookStatus === 'CURRENTLY_READING' && (
         <>
           <ReadingActivityHeader />
           <ReadingActivityContainer />
         </>
-      ) : (
-        ''
       )}
     </>
   );
