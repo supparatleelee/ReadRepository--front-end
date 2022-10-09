@@ -5,6 +5,7 @@ import {
   getAccessToken,
   removeAccessToken,
 } from '../utility/localStorage';
+import { toast } from 'react-toastify';
 
 const AuthContext = createContext();
 
@@ -49,9 +50,21 @@ function AuthContextProvider({ children }) {
     removeAccessToken();
   };
 
+  const deleteAccount = async () => {
+    try {
+      await authService.deleteAccount();
+      setUser(null);
+      removeAccessToken();
+      toast.success('Success delete your account');
+    } catch (err) {
+      console.log(err);
+      toast.error(err.response?.data.msg);
+    }
+  };
+
   return (
     <AuthContext.Provider
-      value={{ user, register, login, logout, initialLoading }}
+      value={{ user, register, login, logout, initialLoading, deleteAccount }}
     >
       {children}
     </AuthContext.Provider>

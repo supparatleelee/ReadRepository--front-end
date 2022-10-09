@@ -1,10 +1,13 @@
 import { useAuth } from '../../contexts/AuthContext';
 import Avatar from '../../components/ui/Avatar';
+import DeleteAccountModal from './DeleteAccountModal';
+import { useState } from 'react';
 
 function ProfileSettingContainer() {
   const {
     user: { firstName, lastName, email },
   } = useAuth();
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   return (
     <div className="d-flex mt-4" style={{ animation: 'fadeOpen 1s' }}>
@@ -39,9 +42,18 @@ function ProfileSettingContainer() {
           Change Your Password
         </button>
 
-        <button type="button" className="d-block btn btn-danger mt-5">
+        <button
+          type="button"
+          className="d-block btn btn-danger mt-5"
+          onClick={() => setIsOpenModal(true)}
+        >
           Delete Your Account
         </button>
+
+        <DeleteAccountModal
+          open={isOpenModal}
+          onClose={() => setIsOpenModal(false)}
+        />
       </div>
     </div>
   );
