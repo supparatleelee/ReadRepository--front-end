@@ -13,6 +13,7 @@ function BookContextProvider({ children }) {
   const [thisBookStatus, setThisBookStatus] = useState('');
   const [userNote, setUserNote] = useState('');
   const [userNoteRes, setUserNoteRes] = useState({});
+  const [readingProgress, setReadingProgress] = useState('');
 
   const getBookInfo = async (olid, authorName) => {
     try {
@@ -98,6 +99,15 @@ function BookContextProvider({ children }) {
     }
   };
 
+  const updateReadingActivity = async (olid, input) => {
+    try {
+      const res = await bookService.updateReadingActivity(olid, input);
+      setReadingProgress(res.data.readingProgress);
+    } catch (err) {
+      toast.error(err.response?.data.msg);
+    }
+  };
+
   return (
     <BookContext.Provider
       value={{
@@ -114,6 +124,8 @@ function BookContextProvider({ children }) {
         setThisBookStatus,
         deleteBookFromList,
         userNoteRes,
+        updateReadingActivity,
+        readingProgress,
       }}
     >
       {children}
