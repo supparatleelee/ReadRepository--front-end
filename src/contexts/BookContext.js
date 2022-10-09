@@ -24,6 +24,7 @@ function BookContextProvider({ children }) {
       setBookAuthorName(authorName);
       setThisBookStatus(res.data.bookStatus);
       setUserNote(res.data.userNote);
+      setReadingProgress(res.data.bookReadingActivity);
     } catch (err) {
       console.log(err);
       toast.error(err.response?.data.msg);
@@ -126,6 +127,7 @@ function BookContextProvider({ children }) {
         userNoteRes,
         updateReadingActivity,
         readingProgress,
+        setReadingProgress,
       }}
     >
       {children}
