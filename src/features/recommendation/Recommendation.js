@@ -44,10 +44,6 @@ function Recommendation() {
           <RecommendedItem />
           <RecommendedItem />
         </div>
-        <div className="d-flex gap-2 justify-content-between mt-4">
-          <RecommendedItem />
-          <RecommendedItem />
-        </div>
       </div>
     </div>
   );
