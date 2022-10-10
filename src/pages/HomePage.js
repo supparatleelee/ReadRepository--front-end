@@ -1,3 +1,4 @@
+import Recommendation from '../features/recommendation/Recommendation';
 import GetStarted from '../layouts/getStarted/GetStarted';
 
 function HomePage() {
@@ -7,7 +8,9 @@ function HomePage() {
         <GetStarted />
       </div>
 
-      <div className="right-div w-50" style={{ marginLeft: '45px' }}></div>
+      <div className="right-div w-50" style={{ marginLeft: '45px' }}>
+        <Recommendation />
+      </div>
     </div>
   );
 }
