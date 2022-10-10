@@ -75,11 +75,11 @@ function SearchResultItem({ title, authorName, coverOLID }) {
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <ArrowDown />
-          <AddToCollectionDropdown
-            open={isOpen}
-            onClose={() => setIsOpen(false)}
-          />
         </button>
+        <AddToCollectionDropdown
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+        />
       </div>
     </div>
   );

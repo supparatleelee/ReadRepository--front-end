@@ -24,6 +24,7 @@ function BookContextProvider({ children }) {
       setBookAuthorName(authorName);
       setThisBookStatus(res.data.bookStatus);
       setUserNote(res.data.userNote);
+      setUserNoteRes(res.data.userNoteUpdatedAt);
       setReadingProgress(res.data.bookReadingActivity);
     } catch (err) {
       console.log(err);
