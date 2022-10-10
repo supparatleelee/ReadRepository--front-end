@@ -48,6 +48,7 @@ function RegisterModal({ open, onClose }) {
       onClose();
     } catch (err) {
       toast.error(err.response.data.msg);
+      setInput({ firstName: '', lastName: '', email: '', password: '' });
     } finally {
       stopLoading();
     }

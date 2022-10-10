@@ -40,6 +40,7 @@ function LoginModal({ open, onClose }) {
       toast.success('succes login');
     } catch (err) {
       toast.error(err.response?.data.msg);
+      setInput({ email: '', password: '' });
     } finally {
       stopLoading();
     }
