@@ -14,7 +14,7 @@ function VisitorSearchResultItem({ title, authorName, coverOLID, OLIDkey }) {
           src={
             coverOLID
               ? `https://covers.openlibrary.org/b/olid/${coverOLID}-M.jpg`
-              : 'https://unmpress.com/sites/default/files/default_images/no_image_book.jpg'
+              : 'https://theprairiesbookreview.com/wp-content/uploads/2023/01/no-cover.png'
           }
           width="80px"
           height="122px"

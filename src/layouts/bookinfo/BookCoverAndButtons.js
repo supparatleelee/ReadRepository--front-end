@@ -30,7 +30,7 @@ function BookCoverAndButtons() {
         src={
           bookCoverOLID
             ? `https://covers.openlibrary.org/b/olid/${bookCoverOLID}-M.jpg`
-            : 'https://unmpress.com/sites/default/files/default_images/no_image_book.jpg'
+            : 'https://theprairiesbookreview.com/wp-content/uploads/2023/01/no-cover.png'
         }
         width="190px"
         height="280px"
