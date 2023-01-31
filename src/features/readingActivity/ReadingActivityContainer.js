@@ -34,7 +34,9 @@ function ReadingActivityContainer() {
       style={{ animation: 'fadeOpen 1s' }}
       className="bg-white border border-radius-10px p-4 box-shadow-5610"
     >
-      <small className="text-muted text-3 w-50">{`On page 251 of 500`}</small>
+      <small className="text-muted text-3 w-50">{`On page ${
+        input.currentPage || '0'
+      } of ${input.totalPage | '0'}`}</small>
 
       <div className="progress-bar-section d-flex align-items-center justify-content-between">
         <div
